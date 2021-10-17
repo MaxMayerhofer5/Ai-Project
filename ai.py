@@ -114,7 +114,7 @@ def Train():
     model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics= ["accuracy"])
     model.fit(em_train, epochs = 40, validation_data=em_test)
     #model.save_weights(r'C:\Users\makot\Documents\AI project - Copy\model')
-    model.save(r'C:\Users\makot\Documents\Final Ai thing')
+    model.save(__file__.strip('ai.py')+'my_h5_model.h5')
 
 
 def mouse_moving(event):
@@ -129,9 +129,9 @@ def mouse_moving(event):
        drawing[y*2,x*2+1]=0
        drawing[y*2+1,x*2+1]=0
     drwng = cv2.resize(drawing,(28*2*drawscale, 28*2*drawscale))
-    cv2.imwrite(r'C:\Users\makot\Documents\Final Ai thing\current_letter.png', drwng)
+    cv2.imwrite(__file__.strip('ai.py')+'current_letter.png', drwng)
     print(drawing)
-    imge = PhotoImage(file = r'C:\Users\makot\Documents\Final Ai thing\current_letter.png', gamma=0)
+    imge = PhotoImage(file = __file__.strip('ai.py')+'current_letter.png', gamma=0)
     displaydrwing = canvas.create_image(1000/2 - 28*drawscale, 600/2 -28*drawscale, anchor = NW, image = imge)
     canvas.tag_raise(displaydrwing)
     print(canvas.nametowidget(displaydrwing))
@@ -141,8 +141,8 @@ def Erase():
         for j in range(0,28):
             drawing[i,j] = 255
             drwng = cv2.resize(drawing,(28*2*drawscale, 28*2*drawscale))
-    cv2.imwrite(r'C:\Users\makot\Documents\Final Ai thing\current_letter.png', drwng)
-    imge = PhotoImage(file = r'C:\Users\makot\Documents\Final Ai thing\current_letter.png')
+    cv2.imwrite(__file__.strip('ai.py')+'current_letter.png', drwng)
+    imge = PhotoImage(file = __file__.strip('ai.py')+'current_letter.png')
     displaydrwing = canvas.create_image(1000/2 - 28*drawscale, 600/2 -28*drawscale, anchor = NW, image = imge)
     print(canvas.nametowidget(displaydrwing))
 
@@ -161,7 +161,7 @@ def Analyze():
     # model.add(Dense(67, activation="softmax"))
     # model.load_weights(r'C:\Users\makot\Documents\AI project - Copy\model')
     # model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics= ["accuracy"])
-    model = tf.keras.models.load_model(r'C:\Users\makot\Documents\Final Ai thing\my_h5_model.h5', compile = True)
+    model = tf.keras.models.load_model(__file__.strip('ai.py')+'my_h5_model.h5', compile = True)
     drawing2 = numP.ndarray(shape=(28,28))
     lowesti = 100
     lowestj = 100
@@ -261,7 +261,7 @@ buttonClicked  = False
 w = canvas.winfo_width()
 h = canvas.winfo_height()
 # b = Button(canvas, text="Press To Add Image", command=buttoncallback1,width=20 , height = 1).place(x=845,y=575) 
-b2 = Button(canvas, text="Train", command=buttoncallback2, width=20, height=1).place(x=10, y = 575)
+#b2 = Button(canvas, text="Train", command=buttoncallback2, width=20, height=1).place(x=10, y = 575)
 b3 = Button(canvas, text="Analyze", command=buttoncallback3, width=20, height=1).place(x=400, y = 575)
 b3 = Button(canvas, text="Erase", command=buttoncallback4, width=20, height=1).place(x=600, y = 575)
 canvas.bind("<ButtonPress-1>", OnMouseDown)
