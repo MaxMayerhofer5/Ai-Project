@@ -1,5 +1,8 @@
 This is my personal project, for the year of 2021. 
 
+
+Try download from https://mega.nz/folder/tZlAUIKZ#1sTASHqG4cyhg6klmGsGsw, if that doesnt work, do this.
+
 Here, there is the code for the app I made, to use it, you have to download a few things first.
 
 1: Python 3.9
