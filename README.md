@@ -1,7 +1,7 @@
 This is my personal project, for the year of 2021. 
 
 
-Try download from https://mega.nz/folder/tZlAUIKZ#1sTASHqG4cyhg6klmGsGsw, if that doesnt work, do this.
+Try download from https://drive.google.com/drive/folders/1MTyka_WIb_TrmXud1uw1fPY6JTOF4zOR?usp=sharing, if that doesnt work, do this.
 
 Here, there is the code for the app I made, to use it, you have to download a few things first.
 
